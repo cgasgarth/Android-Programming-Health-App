@@ -4,25 +4,25 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 //This is going to be the login screen
 public class MainActivity extends AppCompatActivity {
-    public static final String EXTRA_MESSAGE = "EXTRA MESSAGE";
-    @Override
+    public static DBClass db;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        DBClass db = new DBClass(this, "Info");
+        db = new DBClass(this, "Info");
     }
 
     public void openLoginFrag(View view){
         Bundle bundle = new Bundle();
-        bundle.putInt("some_int", 0);
+        DBClass db = new DBClass(MainActivity.this, "Info");
 
         getSupportFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
-                .add(R.id.fragmentContainerView, LoginFragment.class, bundle)
+                .add(R.id.fragmentContainerView, LoginFragment.class, bundle, "LoginFragment")
                 .commit();
     }
 
@@ -32,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
-                .add(R.id.fragmentContainerView, RegisterFragment.class, bundle)
+                .add(R.id.fragmentContainerView, RegisterFragment.class, bundle,
+                        "RegisterFragment")
                 .commit();
     }
 
