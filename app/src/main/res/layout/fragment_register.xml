@@ -14,15 +14,16 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/nameTV"
+            android:id="@+id/nameET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Name"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/dobTV"
+            android:id="@+id/dobET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -31,7 +32,7 @@
             android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/GenderTV"
+            android:id="@+id/genderET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -40,7 +41,7 @@
             android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/userTV"
+            android:id="@+id/userET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -49,7 +50,7 @@
             android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/passTV"
+            android:id="@+id/passET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -63,6 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_weight="1"
+            android:onClick="register"
             android:text="Submit" />
 
     </LinearLayout>

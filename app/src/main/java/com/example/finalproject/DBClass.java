@@ -1,7 +1,6 @@
 package com.example.finalproject;
 
 import android.content.ContentValues;
-import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -25,7 +24,7 @@ public class DBClass extends SQLiteOpenHelper {
     private static final String PASS_COL = "password_val";
 
 
-    public DBClass(Context context,String DATABASE_NAME){
+    public DBClass(MainActivity context, String DATABASE_NAME){
         super(context,DATABASE_NAME,null,1);
     }
     //default constructor, factory points to cursor factory->allow cursor, version of db
