@@ -1,5 +1,6 @@
 package com.example.finalproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,6 +14,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.io.Serializable;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -65,6 +70,8 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
         View v = inflater.inflate(R.layout.fragment_register, container, false);
         Button b = (Button) v.findViewById(R.id.submitButton);
         b.setOnClickListener(this);
+        b = (Button) v.findViewById(R.id.closeButton);
+        b.setOnClickListener(this);
         nameET = v.findViewById(R.id.nameET);
         dobET = v.findViewById(R.id.dobET);
         genderET = v.findViewById(R.id.genderET);
@@ -79,6 +86,9 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.submitButton:
                 register(v);
+                break;
+            case R.id.closeButton:
+                close(v);
                 break;
         }
     }
@@ -105,15 +115,38 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
         if(passET.getText() != null){ pass = passET.getText().toString(); }
         else { pass = "NOT_ENTERED"; }
 
+        DBClass db = MainActivity.db;
+        byte[] hashPassword = new byte[0];
+        Boolean passCheck = true;
+        if(pass.toLowerCase() == pass ){ passCheck = false; }
 
-        Log.i("name is ", name);
 
+//        if(pass != "" & user != "" & gender != "" & dob != "" & name != ""&
+//                user.length() > 4 & passCheck){
+            if(true){
+            try{
+                hashPassword = messageDigest(pass);
+            }
+            catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            }
+            db.addInfo(1, name, dob, gender, hashPassword ,user);
+        }else{
+                    passET.setError("Every space must be completed, the password must be " +
+                            "contain a capital letter, and the username " +
+                            "must be 4 or more characters");
+        }
 
         Toast.makeText(getContext().getApplicationContext(), "You have registered",
                 Toast.LENGTH_LONG).show();
-
-
+    }
+    public void close(View view){
         getParentFragmentManager().beginTransaction()
                 .remove(RegisterFragment.this).commit();
+    }
+
+    public byte[] messageDigest(String s) throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("SHA-256");
+        return md.digest(s.getBytes(StandardCharsets.UTF_8));
     }
 }

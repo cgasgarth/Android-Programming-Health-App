@@ -14,7 +14,7 @@ public class DBClass extends SQLiteOpenHelper {
 
     private static final String NAME_COL = "name";
 
-    private static final String AGE_COL = "age";
+    private static final String DOB_COL = "age";
     // below variable is for our course name column
     // below variable id for our course duration column.
     private static final String GENDER_COL = "gender";
@@ -32,7 +32,7 @@ public class DBClass extends SQLiteOpenHelper {
         String query = "CREATE TABLE " + TABLE_NAME + " ("
                 + ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + NAME_COL + " TEXT, "
-                + AGE_COL + " INTEGER, "
+                + DOB_COL + " INTEGER, "
                 + GENDER_COL + " TEXT, "
                 + PASS_COL + " BLOB, "
                 // + PASSWORD_COL + " TEXT, "
@@ -54,7 +54,7 @@ public class DBClass extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase(); //Opensource db
         //values.put(ID_COL,i);
         values.put(NAME_COL, name);
-        values.put(AGE_COL, Integer.parseInt(age));
+        values.put(DOB_COL, Integer.parseInt(age));
         values.put(GENDER_COL, Gender);
         values.put(PASS_COL, pwd);
 

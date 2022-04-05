@@ -1,5 +1,6 @@
 package com.example.finalproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,10 +10,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import java.io.Serializable;
+import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -62,6 +68,9 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         View v = inflater.inflate(R.layout.fragment_login, container, false);
         Button b = (Button) v.findViewById(R.id.submitButton);
         b.setOnClickListener(this);
+        b = (Button) v.findViewById(R.id.closeButton);
+        b.setOnClickListener(this);
+
         userET = v.findViewById(R.id.userET);
         passET = v.findViewById(R.id.passET);
         // Inflate the layout for this fragment
@@ -72,12 +81,15 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.submitButton:
-                register(v);
+                login(v);
+                break;
+            case R.id.closeButton:
+                close(v);
                 break;
         }
     }
 
-    public void register(View view){
+    public void login(View view){
         String user;
         String pass;
 
@@ -87,15 +99,36 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         if(passET.getText() != null){ pass = passET.getText().toString(); }
         else { pass = "NOT_ENTERED"; }
 
+        try{
+            byte[] hashLoginPassword = messageDigest(pass);
+            DBClass db = MainActivity.db;
+            String cond = "username=" + '"' + user + '"';
+            byte[] getHashedPassword = db.getHash("password_val", "Users", cond);
 
-        Log.i("username is ", user);
+            if (Arrays.equals(hashLoginPassword, getHashedPassword)) {
+                Intent intent = new Intent(getContext(), HomePage.class);
+                startActivity(intent);
+            }else{
+                passET.setError("The password or username is not valid");
+            }
+        }catch(NoSuchAlgorithmException e){
+            e.printStackTrace();
+        }
 
 
         Toast.makeText(getContext().getApplicationContext(), "You have logged in",
                 Toast.LENGTH_LONG).show();
 
+    }
 
+    public void close(View view){
         getParentFragmentManager().beginTransaction()
                 .remove(LoginFragment.this).commit();
+    }
+
+    public byte[] messageDigest(String s) throws NoSuchAlgorithmException
+    {
+        MessageDigest md = MessageDigest.getInstance("SHA-256");
+        return md.digest(s.getBytes(StandardCharsets.UTF_8));
     }
 }
