@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.io.Serializable;
 
@@ -106,5 +107,13 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
 
 
         Log.i("name is ", name);
+
+
+        Toast.makeText(getContext().getApplicationContext(), "You have registered",
+                Toast.LENGTH_LONG).show();
+
+
+        getParentFragmentManager().beginTransaction()
+                .remove(RegisterFragment.this).commit();
     }
 }
