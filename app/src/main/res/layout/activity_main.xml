@@ -45,4 +45,11 @@
         android:onClick="toHomePage"
         android:text="Skip to homepage" />
 
+    <Button
+        android:id="@+id/clearDBButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clearDataBases"
+        android:text="CLEAR REGISTRATIONS" />
+
 </LinearLayout>

@@ -103,22 +103,19 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
             byte[] hashLoginPassword = messageDigest(pass);
             DBClass db = MainActivity.db;
             String cond = "username=" + '"' + user + '"';
+            try{
             byte[] getHashedPassword = db.getHash("password_val", "Users", cond);
 
             if (Arrays.equals(hashLoginPassword, getHashedPassword)) {
                 Intent intent = new Intent(getContext(), HomePage.class);
                 startActivity(intent);
-            }else{
-                passET.setError("The password or username is not valid");
+            }else {
+                passET.setError("The Password is not valid");
             }
+            }catch (Exception e){ userET.setError("The Username is not valid"); }
         }catch(NoSuchAlgorithmException e){
             e.printStackTrace();
         }
-
-
-        Toast.makeText(getContext().getApplicationContext(), "You have logged in",
-                Toast.LENGTH_LONG).show();
-
     }
 
     public void close(View view){
