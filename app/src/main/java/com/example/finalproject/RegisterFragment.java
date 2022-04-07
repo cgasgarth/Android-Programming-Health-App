@@ -111,6 +111,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
             dob = dob + sc.next();
             dob = dob + sc.next();
         }
+
         else { dob = "NOT_ENTERED"; }
 
         if(genderET.getText() != null){ gender = genderET.getText().toString(); }
@@ -136,7 +137,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
             catch (NoSuchAlgorithmException e) {
                 e.printStackTrace();
             }
-            db.addInfo(1, name, dob, gender, hashPassword ,user);
+            db.addInfo(name, dob, gender, hashPassword ,user);
         }else{
                     passET.setError("Every space must be completed, the password must be " +
                             "contain a capital letter, and the username " +

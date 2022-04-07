@@ -47,7 +47,7 @@ public class DBClass extends SQLiteOpenHelper {
         db.execSQL(qry);
         //db.close();
     }
-    public void addInfo(Integer i,String name, String dob, String Gender, byte[] pwd,String Username) {
+    public void addInfo(String name, String dob, String Gender, byte[] pwd,String Username) {
         //getColumns();
         Log.d("inside", "add info");
         ContentValues values = new ContentValues(); //used to store set of values.
