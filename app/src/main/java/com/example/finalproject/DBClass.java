@@ -14,7 +14,7 @@ public class DBClass extends SQLiteOpenHelper {
 
     private static final String NAME_COL = "name";
 
-    private static final String DOB_COL = "age";
+    private static final String DOB_COL = "dob";
     // below variable is for our course name column
     // below variable id for our course duration column.
     private static final String GENDER_COL = "gender";
@@ -47,14 +47,14 @@ public class DBClass extends SQLiteOpenHelper {
         db.execSQL(qry);
         //db.close();
     }
-    public void addInfo(Integer i,String name, String age, String Gender, byte[] pwd,String Username) {
+    public void addInfo(Integer i,String name, String dob, String Gender, byte[] pwd,String Username) {
         //getColumns();
         Log.d("inside", "add info");
         ContentValues values = new ContentValues(); //used to store set of values.
         SQLiteDatabase db = this.getWritableDatabase(); //Opensource db
         //values.put(ID_COL,i);
         values.put(NAME_COL, name);
-        values.put(DOB_COL, Integer.parseInt(age));
+        values.put(DOB_COL, Integer.parseInt(dob));
         values.put(GENDER_COL, Gender);
         values.put(PASS_COL, pwd);
 

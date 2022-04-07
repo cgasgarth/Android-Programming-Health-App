@@ -42,4 +42,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(nextPage);
 
     }
+
+    public void clearDataBases(View view){
+        db.deletetable("Users");
+    }
 }

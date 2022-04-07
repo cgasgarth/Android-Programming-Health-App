@@ -18,6 +18,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Locale;
+import java.util.Scanner;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -103,7 +104,13 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
         if(nameET.getText() != null){ name = nameET.getText().toString(); }
         else { name = "NOT_ENTERED"; }
 
-        if(dobET.getText() != null){ dob = dobET.getText().toString(); }
+        if(dobET.getText() != null){
+            dob = dobET.getText().toString();
+            Scanner sc = new Scanner(dob).useDelimiter("/");
+            dob = sc.next();
+            dob = dob + sc.next();
+            dob = dob + sc.next();
+        }
         else { dob = "NOT_ENTERED"; }
 
         if(genderET.getText() != null){ gender = genderET.getText().toString(); }
@@ -121,9 +128,8 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
         if(pass.toLowerCase() == pass ){ passCheck = false; }
 
 
-//        if(pass != "" & user != "" & gender != "" & dob != "" & name != ""&
-//                user.length() > 4 & passCheck){
-            if(true){
+        if(pass != "" & user != "" & gender != "" & dob != "" & name != ""&
+                user.length() > 4 & passCheck){
             try{
                 hashPassword = messageDigest(pass);
             }
