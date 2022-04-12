@@ -1,22 +1,32 @@
 package com.example.finalproject;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
+import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
-import android.widget.EditText;
-import android.widget.Toast;
-
-import java.io.Serializable;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 
@@ -66,30 +76,31 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_login, container, false);
-        Button b = (Button) v.findViewById(R.id.submitButton);
+        Button b = v.findViewById(R.id.submitButton);
         b.setOnClickListener(this);
-        b = (Button) v.findViewById(R.id.closeButton);
+        b = v.findViewById(R.id.closeButton);
         b.setOnClickListener(this);
-
+        requestAppPermissions();
         userET = v.findViewById(R.id.userET);
         passET = v.findViewById(R.id.passET);
         // Inflate the layout for this fragment
         return v;
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.submitButton:
-                login(v);
+                login();
                 break;
             case R.id.closeButton:
-                close(v);
+                close();
                 break;
         }
     }
 
-    public void login(View view){
+    public void login(){
         String user;
         String pass;
 
@@ -107,6 +118,13 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
             byte[] getHashedPassword = db.getHash("password_val", "Users", cond);
 
             if (Arrays.equals(hashLoginPassword, getHashedPassword)) {
+                try {
+                    writeFile("Info.txt",user); //filename:info.txt
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
                 Intent intent = new Intent(getContext(), HomePage.class);
                 startActivity(intent);
             }else {
@@ -118,7 +136,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    public void close(View view){
+    public void close(){
         getParentFragmentManager().beginTransaction()
                 .remove(LoginFragment.this).commit();
     }
@@ -127,5 +145,54 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     {
         MessageDigest md = MessageDigest.getInstance("SHA-256");
         return md.digest(s.getBytes(StandardCharsets.UTF_8));
+    }
+
+    public void writeFile(String filename,String name) throws JSONException, FileNotFoundException {
+        /*
+        What is JSONException?
+        Thrown to indicate a problem with the JSON API. Such problems include:
+
+            Attempts to parse or construct malformed documents
+            Use of null as a name
+            Use of numeric types not available to JSON, such as NaNs or infinities.
+            Lookups using an out of range index or nonexistent name
+            Type mismatches on lookups
+         */
+        String myDir = Environment.getExternalStorageDirectory() +"/Documents/"+filename; //creating a file in the internal storage/Documents folder on phone.
+        Log.d("PrintDir","====="+myDir);
+        File file = new File(myDir);    //creating a file object
+        JSONObject actJSON = new JSONObject();   //create a JSONObject
+        actJSON.put("Name",name);
+
+        //Write to the file and store in internal storage
+        FileOutputStream fOut = new FileOutputStream(file, true); //create a file output stream for writing data to file
+        OutputStreamWriter myOutWriter = new OutputStreamWriter(fOut);  //converts character stream into byte stream
+        try {
+            myOutWriter.append(actJSON.toString() + "\n");  //write JSONObject to file
+            myOutWriter.close();
+            fOut.close();
+        }
+        catch (Exception e){
+            e.printStackTrace();  //to handle exceptions and errors.
+        }
+
+    }
+
+    private boolean hasWritePermissions() {
+        return (ContextCompat.checkSelfPermission(getContext(),
+                Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED);
+    }
+
+    private void requestAppPermissions() {
+        //  if (hasReadPermissions() && hasWritePermissions()) {
+        if (hasWritePermissions()) {
+
+            return;
+        }
+        ActivityCompat.requestPermissions(getActivity(),
+                new String[] {
+                        Manifest.permission.READ_EXTERNAL_STORAGE,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE
+                }, 0);
     }
 }
