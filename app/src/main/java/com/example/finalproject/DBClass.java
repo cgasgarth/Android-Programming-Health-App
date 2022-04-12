@@ -8,7 +8,7 @@ import android.util.Log;
 
 public class DBClass extends SQLiteOpenHelper {
 
-    private String TABLE_NAME="Users";
+    private final String TABLE_NAME="Users";
 
     private static final String ID_COL = "id";
 
@@ -39,13 +39,13 @@ public class DBClass extends SQLiteOpenHelper {
                 + USERNAME_COL + " TEXT)";
 
         db.execSQL(query);
-//        db.close();
+        db.close();
     }
     public void deletetable(String table_name){
         SQLiteDatabase db = this.getWritableDatabase();
         String qry="DELETE FROM "+table_name;
         db.execSQL(qry);
-        //db.close();
+        db.close();
     }
     public void addInfo(String name, String dob, String Gender, byte[] pwd,String Username) {
         //getColumns();
@@ -62,7 +62,7 @@ public class DBClass extends SQLiteOpenHelper {
         Log.d("Pre","Insert");
         db.insert(TABLE_NAME, null, values);
         Log.d("post", "insert");
-//        db.close();
+        db.close();
     }
     public void getColumns(){
         SQLiteDatabase db = this.getReadableDatabase();
@@ -74,9 +74,9 @@ public class DBClass extends SQLiteOpenHelper {
             i+=1;
 
         }
+        c.close();
     }
     public String selectQuery(String fieldname){
-        String fieldvalue;
         String query="SELECT "+fieldname+" FROM "+TABLE_NAME;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cur=db.rawQuery(query,null); //Runs the provided SQL and returns a Cursor over the result set.
@@ -95,7 +95,7 @@ public class DBClass extends SQLiteOpenHelper {
         }
         cur.close();
 
-        //db.close();
+        db.close();
         return val;
     }
 
@@ -118,7 +118,7 @@ public class DBClass extends SQLiteOpenHelper {
 //            Log.d("==SelectCondition===","====="+val);
 //        }
         cur.close();
-        //db.close();
+        db.close();
         return val;
     }
 
@@ -127,8 +127,8 @@ public class DBClass extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cur=db.rawQuery(query,null); //Runs the provided SQL and returns a Cursor over the result set.
         cur.moveToFirst();
-        byte[] pass = cur.getBlob(0);
-        return pass;
+        db.close();
+        return cur.getBlob(0);
     }
 
 //    public boolean checkUser(String usern, String pass){
@@ -146,7 +146,7 @@ public class DBClass extends SQLiteOpenHelper {
     public void updateTable(String field1,String fieldvalue1,String field2,String fieldvalue2){
         SQLiteDatabase db = this.getReadableDatabase();
         db.execSQL("UPDATE "+TABLE_NAME+" SET"+" "+field1 +"="+"'"+fieldvalue1+"',"+field2+"="+"'"+fieldvalue2+"'"); //special character.
-        //db.close();
+        db.close();
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) { //Called when the database needs to be upgraded. The implementation should use this method to drop tables, add tables, or do anything else it needs to upgrade to the new schema version.
