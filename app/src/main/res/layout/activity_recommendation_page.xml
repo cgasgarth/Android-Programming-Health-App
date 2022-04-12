@@ -11,5 +11,18 @@
         android:layout_height="729dp"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="1dp"
+<<<<<<< Updated upstream
         tools:layout_editor_absoluteY="1dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
+=======
+        tools:layout_editor_absoluteY="1dp">
+
+        <Button
+            android:id="@+id/returnhome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="ReturnHome"
+            android:text="Return Home" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+>>>>>>> Stashed changes
