@@ -8,8 +8,8 @@
     tools:context=".HomePage">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="443dp">
+        android:layout_width="399dp"
+        android:layout_height="570dp">
 
         <TextView
             android:id="@+id/welcomeTV"
@@ -20,29 +20,49 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/Recommendations"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="GoRecommendations"
-        android:text="Recommendations" />
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/Progress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="ProgressTracker"
-        android:text="ProgressTracker" />
+        <LinearLayout
+            android:layout_width="203dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/Journal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="DailyJournal" />
+            <Button
+                android:id="@+id/Logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Logout" />
 
-    <Button
-        android:id="@+id/Logout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Logout" />
+            <Button
+                android:id="@+id/Recommendations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="GoRecommendations"
+                android:text="Recommendations" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="207dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/Progress"
+                android:layout_width="208dp"
+                android:layout_height="wrap_content"
+                android:onClick="ProgressTracker"
+                android:text="ProgressTracker" />
+
+            <Button
+                android:id="@+id/Journal"
+                android:layout_width="207dp"
+                android:layout_height="wrap_content"
+                android:text="DailyJournal" />
+        </LinearLayout>
+
+    </LinearLayout>
+
 </LinearLayout>
