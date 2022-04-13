@@ -65,15 +65,4 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/Alarm"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Alarms" />
-
-    <Button
-        android:id="@+id/Logout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Logout" />
 </LinearLayout>
