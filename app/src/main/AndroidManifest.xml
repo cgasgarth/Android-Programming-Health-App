@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject">
         <activity
+            android:name=".Alarm"
+            android:exported="false" />
+        <activity
             android:name=".RecommendationPage"
             android:exported="false" />
         <activity
