@@ -20,7 +20,8 @@ public class RecommendationPage extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
-                .add(R.id.fragmentContainerView, RecommendationFragment1.class, bundle)
+                .add(R.id.fragmentContainerView, RecommendationFragment1.class,
+                        bundle, "RecommendationFragment1")
                 .commit();
     }
     public void openSocialFrag(View view){
@@ -29,7 +30,8 @@ public class RecommendationPage extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
-                .add(R.id.fragmentContainerView, RecommendationFragment2.class, bundle)
+                .add(R.id.fragmentContainerView, RecommendationFragment2.class,
+                        bundle,"RecommendationFragment2")
                 .commit();
     }
     public void openPhysicalFrag(View view){
@@ -37,7 +39,8 @@ public class RecommendationPage extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
-                .add(R.id.fragmentContainerView, RecommendationFragment3.class, bundle)
+                .add(R.id.fragmentContainerView, RecommendationFragment3.class,
+                        bundle, "RecommendationFragment3")
                 .commit();
     }
 

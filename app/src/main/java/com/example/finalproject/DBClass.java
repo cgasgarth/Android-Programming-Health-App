@@ -40,7 +40,11 @@ public class DBClass extends SQLiteOpenHelper {
                 + USERNAME_COL + " TEXT)";
 
         db.execSQL(query);
+<<<<<<< Updated upstream
 //        db.close();
+=======
+      //  db.close();
+>>>>>>> Stashed changes
     }
     public void deletetable(String table_name){
         SQLiteDatabase db = this.getWritableDatabase();

@@ -57,6 +57,7 @@
             android:inputType="textPersonName"
             android:minHeight="48dp" />
 
+<<<<<<< Updated upstream
         <Button
             android:id="@+id/submitButton"
             android:layout_width="wrap_content"
@@ -64,6 +65,32 @@
             android:layout_gravity="center_horizontal"
             android:layout_weight="1"
             android:text="Submit" />
+=======
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/submitButton"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:onClick="register"
+                android:text="Submit" />
+
+            <Button
+                android:id="@+id/closeButton"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="close"
+                android:text="Close" />
+        </LinearLayout>
+>>>>>>> Stashed changes
 
     </LinearLayout>
 
