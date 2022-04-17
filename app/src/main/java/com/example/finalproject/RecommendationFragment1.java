@@ -1,5 +1,7 @@
 package com.example.finalproject;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,6 +15,7 @@ import android.view.ViewGroup;
  * Use the {@link RecommendationFragment1#newInstance} factory method to
  * create an instance of this fragment.
  */
+
 public class RecommendationFragment1 extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -49,10 +52,6 @@ public class RecommendationFragment1 extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -61,4 +60,22 @@ public class RecommendationFragment1 extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_recommendation1, container, false);
     }
+
+
+
+    public void Click(View view){
+        Intent recIntent = new Intent(this, HomePage.class);
+        startActivity(recIntent);
+
+    }
+
+
+    public void close(){
+        getParentFragmentManager().beginTransaction()
+                .remove(RecommendationFragment1.this).commit();
+    }
+
+
+
+
 }

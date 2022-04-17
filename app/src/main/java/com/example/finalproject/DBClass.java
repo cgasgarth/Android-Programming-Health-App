@@ -39,7 +39,7 @@ public class DBClass extends SQLiteOpenHelper {
                 + USERNAME_COL + " TEXT)";
 
         db.execSQL(query);
-        db.close();
+      //  db.close();
     }
     public void deletetable(String table_name){
         SQLiteDatabase db = this.getWritableDatabase();
