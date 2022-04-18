@@ -40,7 +40,7 @@ public class HomePage extends AppCompatActivity {
     }
 
     public void toAlarm(View view){
-        Intent alarmMain = new Intent(this, AlarmMain.class);
+        Intent alarmMain = new Intent(this, AlarmsPage.class);
         startActivity(alarmMain);
     }
 

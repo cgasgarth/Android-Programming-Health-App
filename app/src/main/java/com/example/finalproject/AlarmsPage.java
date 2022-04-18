@@ -1,17 +1,10 @@
 package com.example.finalproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
-import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -22,28 +15,29 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import java.lang.reflect.Array;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.TimeZone;
-import java.util.concurrent.TimeUnit;
 
-public class AlarmMain extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
-    private ArrayList<Alarm> alarms = new ArrayList<Alarm>();
+public class AlarmsPage extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+    private final ArrayList<Alarm> alarms = new ArrayList<>();
     private ArrayAdapter<Alarm> adapter2;
     private Alarm selectedAlarm;
     private int requestCode = 0;
 
 
+    @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_alarms_page);
 
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        Spinner spinner = findViewById(R.id.spinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.times_array, android.R.layout.simple_spinner_item);
@@ -53,13 +47,14 @@ public class AlarmMain extends AppCompatActivity implements AdapterView.OnItemSe
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
-        Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
-        adapter2 = new ArrayAdapter<Alarm>(this, android.R.layout.simple_spinner_item, alarms);
+        Spinner spinner2 = findViewById(R.id.spinner2);
+        adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, alarms);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner2.setAdapter(adapter2);
         spinner2.setOnItemSelectedListener(this);
 
     }
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onItemSelected(AdapterView<?> parent, View view,
                                int pos, long id) {
@@ -105,9 +100,9 @@ public class AlarmMain extends AppCompatActivity implements AdapterView.OnItemSe
             String month = date[0];
             String day = date[1];
             String year = date[2];
-            calendar.set(Calendar.MONTH, Integer.valueOf(date[0]));
-            calendar.set(Calendar.DAY_OF_MONTH, Integer.valueOf(date[1]));
-            calendar.set(calendar.YEAR, Integer.valueOf(date[2]));
+            calendar.set(Calendar.MONTH, Integer.parseInt(date[0]));
+            calendar.set(Calendar.DAY_OF_MONTH, Integer.parseInt(date[1]));
+            calendar.set(Calendar.YEAR, Integer.parseInt(date[2]));
             Log.i("Month, day, year", month + day + year);
         }
 
@@ -121,7 +116,7 @@ public class AlarmMain extends AppCompatActivity implements AdapterView.OnItemSe
         //Creating a pending intent for sendNotification class.
         Intent intent = new Intent(this, sendNotification.class);
         intent.putExtra("AlarmName", name);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, requestCode, intent, PendingIntent.FLAG_ONE_SHOT);
+        @SuppressLint("UnspecifiedImmutableFlag") PendingIntent pendingIntent = PendingIntent.getBroadcast(this, requestCode, intent, PendingIntent.FLAG_ONE_SHOT);
         requestCode++;
         //Generating object of alarmManager using getSystemService method. Here ALARM_SERVICE is used to receive alarm manager with intent at a time.
         AlarmManager alarmManager=(AlarmManager)getSystemService(ALARM_SERVICE);
@@ -136,6 +131,7 @@ public class AlarmMain extends AppCompatActivity implements AdapterView.OnItemSe
         Toast.makeText(this, "Alarm has been created.", Toast.LENGTH_LONG).show();
     }
 
+    @SuppressLint("UnspecifiedImmutableFlag")
     public void updateAlarm(View view){
         //remove the current pending intent
         PendingIntent pendingIntent = selectedAlarm.getPendingIntent();
@@ -157,9 +153,9 @@ public class AlarmMain extends AppCompatActivity implements AdapterView.OnItemSe
             String month = date[0];
             String day = date[1];
             String year = date[2];
-            calendar.set(Calendar.MONTH, Integer.valueOf(date[0]));
-            calendar.set(Calendar.DAY_OF_MONTH, Integer.valueOf(date[1]));
-            calendar.set(calendar.YEAR, Integer.valueOf(date[2]));
+            calendar.set(Calendar.MONTH, Integer.parseInt(date[0]));
+            calendar.set(Calendar.DAY_OF_MONTH, Integer.parseInt(date[1]));
+            calendar.set(Calendar.YEAR, Integer.parseInt(date[2]));
             Log.i("Month, day, year", month + day + year);
         }
 
@@ -216,6 +212,7 @@ class Alarm{
 
     public String getAlarmName(){ return this.alarmName; }
     public void setAlarmName(String alarmName){ this.alarmName = alarmName; }
+    @NonNull
     @Override
     public String toString(){
         Calendar calendar = Calendar.getInstance();
@@ -225,9 +222,8 @@ class Alarm{
         Date date = new Date(milliTime);
         DateFormat formatter = new SimpleDateFormat("MM/dd/yyyy 'at' hh:mm:ss");
         //formatter.setTimeZone(TimeZone.getTimeZone("UTC"));
-        String dateFormatted = formatter.format(date) + " " + this.getAlarmName();
 
-        return dateFormatted;
+        return formatter.format(date) + " " + this.getAlarmName();
 
     }
 }
