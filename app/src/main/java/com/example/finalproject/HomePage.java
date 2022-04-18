@@ -35,4 +35,9 @@ public class HomePage extends AppCompatActivity {
         startActivity(recIntent);
     }
 
+    public void toAlarm(View view){
+        Intent alarmMain = new Intent(this, AlarmsPage.class);
+        startActivity(alarmMain);
+    }
+
 }
