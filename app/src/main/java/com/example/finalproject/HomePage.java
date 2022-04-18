@@ -13,16 +13,12 @@ public class HomePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
-        Button Logout = (Button) findViewById(R.id.Logout);
-       Logout.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                finish();
-                System.exit(0);
-            }
-        });
+    }
+
+    public void Logout(View view){
+        finish();
+        System.exit(0);
     }
 
     public void ProgressTracker(View view){
