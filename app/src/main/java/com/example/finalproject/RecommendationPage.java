@@ -64,12 +64,7 @@ public class RecommendationPage extends AppCompatActivity {
 
 
 
-    public void ReturnHome(View view){
-        Intent homeIntent = new Intent(this, HomePage.class);
-        startActivity(homeIntent);
 
-
-    }
 
     public void openMentalFrag(View view){
         Bundle bundle = new Bundle();
