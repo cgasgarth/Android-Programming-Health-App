@@ -95,9 +95,4 @@ public class RecommendationPage extends AppCompatActivity {
                         bundle, "RecommendationFragment3")
                 .commit();
     }
-
-    public void ReturnHome(View view){
-        Intent homeIntent = new Intent(this, HomePage.class);
-        startActivity(homeIntent);
-    }
 }

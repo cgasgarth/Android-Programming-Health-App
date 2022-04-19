@@ -2,7 +2,9 @@ package com.example.finalproject;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Environment;
@@ -125,6 +127,15 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
+                cond = "username=" + '"' + user + '"';
+                String getName = db.selectConditionQuery("name", cond);
+
+                SharedPreferences sharedPreferences =
+                        this.getActivity().getSharedPreferences("Details", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("Name", getName);
+                editor.commit();
+
                 Intent intent = new Intent(getContext(), HomePage.class);
                 startActivity(intent);
             }else {

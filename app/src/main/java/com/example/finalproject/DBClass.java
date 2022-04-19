@@ -111,7 +111,7 @@ public class DBClass extends SQLiteOpenHelper {
         cur.moveToFirst();
         Log.d("==SelectCondition===","====="+cur.getString(0));
 
-        String val=cur.getString(0)+" ";  //first record
+        String val=cur.getString(0);  //first record
 //        while (cur.moveToNext()) {  //contains all rows. traversing
 //            // if (cur.getInt(1)) {
 //            val+= cur.getString(0)+" ";
