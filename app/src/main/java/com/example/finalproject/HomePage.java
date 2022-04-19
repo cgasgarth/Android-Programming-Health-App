@@ -25,6 +25,12 @@ public class HomePage extends AppCompatActivity {
     }
 
     public void Logout(View view){
+        SharedPreferences sharedpreferences =
+                getSharedPreferences("Details", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        editor.remove("Name"); // will delete key Name
+        editor.commit();
+
         finish();
         System.exit(0);
     }
