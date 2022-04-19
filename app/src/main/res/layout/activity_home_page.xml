@@ -14,9 +14,13 @@
         <TextView
             android:id="@+id/welcomeTV"
             android:layout_width="match_parent"
-            android:layout_height="137dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_weight="1"
-            android:text="Testing Commit" />
+            android:fontFamily="sans-serif-black"
+            android:gravity="center_horizontal"
+            android:text="Testing Commit"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
     </LinearLayout>
 
@@ -34,6 +38,7 @@
                 android:id="@+id/Logout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="Logout"
                 android:text="Logout" />
 
             <Button
