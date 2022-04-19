@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QIDPageNine">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="12. General Interest"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <RadioGroup
+            android:id="@+id/RG1"
+            android:layout_width="match_parent"
+            android:layout_height="232dp">
+
+            <RadioButton
+                android:id="@+id/Q12R1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="There is no change from usual in how interested I  am in other people or activities." />
+
+            <RadioButton
+                android:id="@+id/Q12R2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I notice that I am less interested in people or  activities." />
+
+            <RadioButton
+                android:id="@+id/Q12R3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I find I have interest in only one or two of my  formerly pursued activities." />
+
+            <RadioButton
+                android:id="@+id/Q12R4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I have virtually no interest in formerly pursued  activities." />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="107dp"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/button23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="lastPage"
+                android:text="Back" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/button24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="nextPage"
+                android:text="Next" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/alertText"
+        android:layout_width="394dp"
+        android:layout_height="365dp"
+        tools:layout_editor_absoluteY="369dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

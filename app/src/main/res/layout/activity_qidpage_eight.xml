@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QIDPageEight">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="11. View of Myself:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <RadioGroup
+            android:id="@+id/RG1"
+            android:layout_width="match_parent"
+            android:layout_height="237dp">
+
+            <RadioButton
+                android:id="@+id/Q11R1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" I see myself as equally worthwhile and deserving as  other people." />
+
+            <RadioButton
+                android:id="@+id/Q11R2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" I am more self-blaming than usual." />
+
+            <RadioButton
+                android:id="@+id/Q11R3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I largely believe that I cause problems for others." />
+
+            <RadioButton
+                android:id="@+id/Q11R4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" I think almost constantly about major and minor  defects in myself." />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="73dp"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/button20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="lastPage"
+                android:text="Back" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/button19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="nextPage"
+                android:text="Next" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/alertText"
+        android:layout_width="match_parent"
+        android:layout_height="377dp"
+        tools:layout_editor_absoluteY="340dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
