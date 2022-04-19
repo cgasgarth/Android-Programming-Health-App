@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QIDPageOne">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/TitleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="During the past 7 days..."
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/black" />
+
+            <RadioGroup
+                android:id="@+id/RG1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout_editor_absoluteX="44dp"
+                tools:layout_editor_absoluteY="16dp">
+
+                <TextView
+                    android:id="@+id/Q1Text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="setAnswerVals"
+                    android:text="1. Falling Asleep:"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/black" />
+
+                <RadioButton
+                    android:id="@+id/Q1R1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="setAnswerVals"
+                    android:text="I never take longer than 30 minutes to fall asleep" />
+
+                <RadioButton
+                    android:id="@+id/Q1R2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="setAnswerVals"
+                    android:text="I take at least 30 minutes to fall asleep, less than half the time." />
+
+                <RadioButton
+                    android:id="@+id/Q1R3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="setAnswerVals"
+                    android:text="I take at least 30 minutes to fall asleep, more than half the time." />
+
+                <RadioButton
+                    android:id="@+id/Q1R4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="setAnswerVals"
+                    android:text="I take more than 60 minutes to fall asleep, more than half the time." />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/RG2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout_editor_absoluteX="38dp"
+                tools:layout_editor_absoluteY="269dp">
+
+                <TextView
+                    android:id="@+id/Q2Text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2. Sleep During the Night"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/black" />
+
+                <RadioButton
+                    android:id="@+id/Q2R1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="setAnswerVals"
+                    android:text="I do not wake up at night." />
+
+                <RadioButton
+                    android:id="@+id/Q2R2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="setAnswerVals"
+                    android:text="I have a restless, light sleep with a few brief awakenings each night." />
+
+                <RadioButton
+                    android:id="@+id/Q2R3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="setAnswerVals"
+                    android:text="I wake up at least once a night, but I go back to sleep easily" />
+
+                <RadioButton
+                    android:id="@+id/Q2R4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="setAnswerVals"
+                    android:text="I awaken more than once a night adn stay awake for 20 minutes or more, more than half the time." />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/RG3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout_editor_absoluteX="81dp"
+                tools:layout_editor_absoluteY="495dp">
+
+                <TextView
+                    android:id="@+id/Q3Text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="3. Waking Up Too Early"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/black" />
+
+                <RadioButton
+                    android:id="@+id/Q3R1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="setAnswerVals"
+                    android:text="Most of the time, I awaken no more than 30 minutes  before I need to get up." />
+
+                <RadioButton
+                    android:id="@+id/Q3R2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="setAnswerVals"
+                    android:text=" I almost always awaken at least one hour or so  before I need to, but I go back to sleep eventually" />
+
+                <RadioButton
+                    android:id="@+id/Q3R3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="setAnswerVals"
+                    android:text="I awaken at least one hour before I need to, and  can't go back to sleep." />
+
+                <RadioButton
+                    android:id="@+id/Q3R4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="setAnswerVals"
+                    android:text="More than half the time, I awaken more than 30  minutes before I need to get up." />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/RG4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout_editor_absoluteX="75dp"
+                tools:layout_editor_absoluteY="758dp">
+
+                <TextView
+                    android:id="@+id/Q4Text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="4. Sleeping Too Much"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/black" />
+
+                <RadioButton
+                    android:id="@+id/Q4R1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="setAnswerVals"
+                    android:text=" I sleep no longer than 7-8 hours/night, without  napping during the day." />
+
+                <RadioButton
+                    android:id="@+id/Q4R2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="setAnswerVals"
+                    android:text="I sleep no longer than 10 hours in a 24-hour period including naps" />
+
+                <RadioButton
+                    android:id="@+id/Q4R3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="setAnswerVals"
+                    android:text="I sleep longer than 12 hours in a 24-hour period including naps" />
+
+                <RadioButton
+                    android:id="@+id/Q4R4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="setAnswerVals"
+                    android:text="I sleep longer than 12 hours in a 24-hour period including naps" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/ButtonBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Back" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/ButtonNext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="nextPage"
+                    android:text="Next" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/AlertText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

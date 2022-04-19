@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QIDPageEleven">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="14. Feeling Slowed Down:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <RadioGroup
+                android:id="@+id/RG1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/Q14R1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="I think, speak, and move at my usual rate of speed." />
+
+                <RadioButton
+                    android:id="@+id/Q14R2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="I find that my thinking is slowed down or my voice  sounds dull or flat." />
+
+                <RadioButton
+                    android:id="@+id/Q14R3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="It takes me several seconds to respond to most  questions and I'm sure my thinking is slowed." />
+
+                <RadioButton
+                    android:id="@+id/Q14R4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="I am often unable to respond to questions without  extreme effort." />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="15. Feeling Restless:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <RadioGroup
+                android:id="@+id/RG2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/Q15R1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="I do not feel restless." />
+
+                <RadioButton
+                    android:id="@+id/Q15R2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="I'm often fidgety, wringing my hands, or need to shift  how I am sitting." />
+
+                <RadioButton
+                    android:id="@+id/Q15R3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" I have impulses to move about and am quite restless." />
+
+                <RadioButton
+                    android:id="@+id/Q15R4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="At times, I am unable to stay seated and need to pace  around." />
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/button27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="lastPage"
+                    android:text="Back" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/button28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="nextPage"
+                    android:text="Next" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

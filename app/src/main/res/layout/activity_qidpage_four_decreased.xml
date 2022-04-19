@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QIDPageFourDecreased">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="6. Decreased Appetite:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <RadioGroup
+            android:id="@+id/RG1"
+            android:layout_width="match_parent"
+            android:layout_height="214dp">
+
+            <RadioButton
+                android:id="@+id/Q6R1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="There is no change in my usual appetite." />
+
+            <RadioButton
+                android:id="@+id/Q6R2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I eat somewhat less often or lesser amoutns of food than usual." />
+
+            <RadioButton
+                android:id="@+id/Q6R3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I eat much less than usual and only with personal effort." />
+
+            <RadioButton
+                android:id="@+id/Q6R4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I rarely eat within a 24-hour period, and only with extreme personal effort or when others persuade me to eat." />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="lastPage"
+                android:text="Back" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="nextPage"
+                android:text="Next" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/AlertText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

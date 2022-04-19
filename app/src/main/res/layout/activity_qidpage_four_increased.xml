@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QIDPageFourIncreased">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="7.Increased Appetite:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <RadioGroup
+            android:id="@+id/RG1"
+            android:layout_width="match_parent"
+            android:layout_height="226dp">
+
+            <RadioButton
+                android:id="@+id/Q7R1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="There is no change from my usual appetite." />
+
+            <RadioButton
+                android:id="@+id/Q7R2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I feel a need to eat more frequently than usual." />
+
+            <RadioButton
+                android:id="@+id/Q7R3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I regularly eat more oftern and/or greater amounts of food than usual." />
+
+            <RadioButton
+                android:id="@+id/Q7R4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I feel driven to overeat both at mealtime and between meals." />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="lastPage"
+                android:text="Back" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="nextPage"
+                android:text="Next" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/AlertText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

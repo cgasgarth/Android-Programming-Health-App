@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QIDPageSeven">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="10. Concentration / Decision Making:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <RadioGroup
+            android:id="@+id/RG1"
+            android:layout_width="match_parent"
+            android:layout_height="232dp">
+
+            <RadioButton
+                android:id="@+id/Q10R1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="There is no change in my usual capacity to  concentrate or make decisions." />
+
+            <RadioButton
+                android:id="@+id/Q10R2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I occasionally feel indecisive or find that my attention  wanders." />
+
+            <RadioButton
+                android:id="@+id/Q10R3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Most of the time, I struggle to focus my attention or  to make decisions." />
+
+            <RadioButton
+                android:id="@+id/Q10R4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I cannot concentrate well enough to read or cannot  make even minor decisions." />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/button18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="lastPage"
+                android:text="Back" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/button17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="nextPage"
+                android:text="Next" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/alertText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteY="347dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

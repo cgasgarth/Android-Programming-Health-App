@@ -10,6 +10,48 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject">
         <activity
+            android:name=".QIDPageTwelve"
+            android:exported="false" />
+        <activity
+            android:name=".QIDPageEleven"
+            android:exported="false" />
+        <activity
+            android:name=".QIDPageTen"
+            android:exported="false" />
+        <activity
+            android:name=".QIDPageNine"
+            android:exported="false" />
+        <activity
+            android:name=".QIDPageEight"
+            android:exported="false" />
+        <activity
+            android:name=".QIDPageSeven"
+            android:exported="false" />
+        <activity
+            android:name=".QIDPageSixWeightIncrease"
+            android:exported="false" />
+        <activity
+            android:name=".QIDPageSixWeightDecrease"
+            android:exported="false" />
+        <activity
+            android:name=".QIDPageFive"
+            android:exported="false" />
+        <activity
+            android:name=".QIDPageFourDecreased"
+            android:exported="false" />
+        <activity
+            android:name=".QIDPageFourIncreased"
+            android:exported="false" />
+        <activity
+            android:name=".QIDPageThree"
+            android:exported="false" />
+        <activity
+            android:name=".QIDPageTwo"
+            android:exported="false" />
+        <activity
+            android:name=".QIDPageOne"
+            android:exported="false" />
+        <activity
             android:name=".AlarmsPage"
             android:exported="false" />
         <activity
