@@ -1,11 +1,6 @@
 package com.example.finalproject;
 
-import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,11 +8,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.fragment.app.Fragment;
+
 import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Locale;
 import java.util.Scanner;
 
 /**
@@ -138,14 +134,17 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
                 e.printStackTrace();
             }
             db.addInfo(name, dob, gender, hashPassword ,user);
+            getParentFragmentManager().beginTransaction()
+                    .remove(RegisterFragment.this).commit();
+
+            Toast.makeText(getContext().getApplicationContext(), "You have registered",
+                    Toast.LENGTH_LONG).show();
         }else{
                     passET.setError("Every space must be completed, the password must be " +
                             "contain a capital letter, and the username " +
                             "must be 4 or more characters");
         }
 
-        Toast.makeText(getContext().getApplicationContext(), "You have registered",
-                Toast.LENGTH_LONG).show();
     }
     public void close(View view){
         getParentFragmentManager().beginTransaction()

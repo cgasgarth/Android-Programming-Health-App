@@ -1,11 +1,13 @@
 package com.example.finalproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
+import java.util.List;
 
 //This is going to be the login screen
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     public void openLoginFrag(View view){
         Bundle bundle = new Bundle();
         DBClass db = new DBClass(MainActivity.this, "Info");
+        closeAllFragments(view);
 
         getSupportFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
@@ -29,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     public void openRegisterFrag(View view){
         Bundle bundle = new Bundle();
         bundle.putInt("some_int", 0);
+        closeAllFragments(view);
 
         getSupportFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
@@ -41,6 +45,15 @@ public class MainActivity extends AppCompatActivity {
         Intent nextPage = new Intent(this, HomePage.class); //Check that it is set to correct page
         startActivity(nextPage);
 
+    }
+
+    public void closeAllFragments(View view){
+        List<Fragment> all_frags = getSupportFragmentManager().getFragments();
+        if(all_frags != null){
+            for (Fragment frag : all_frags) {
+                getSupportFragmentManager().beginTransaction().remove(frag).commit();
+            }
+        }
     }
 
     public void clearDataBases(View view){
