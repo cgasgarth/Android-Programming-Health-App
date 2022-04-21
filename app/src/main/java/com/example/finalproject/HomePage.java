@@ -47,4 +47,9 @@ public class HomePage extends AppCompatActivity {
         startActivity(alarmMain);
     }
 
+    public void qidPage(View view){
+        Intent QIDIntent = new Intent(this, QIDPageOne.class);
+        startActivity(QIDIntent);
+    }
+
 }
