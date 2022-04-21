@@ -6,8 +6,8 @@
     tools:context=".RecommendationFragment2">
 
     <!-- TODO: Update blank fragment layout -->
-
-    <LinearLayout
+    <TextView
+        android:id="@+id/physical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">

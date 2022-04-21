@@ -38,14 +38,16 @@ public class HomePage extends AppCompatActivity {
         startActivity(Progress);
     }
 
-    public void GoRecommendations(View view){
-        Intent recIntent = new Intent(this, RecommendationPage.class);
-        startActivity(recIntent);
+    public void Recommendations(View view){
+        Intent goToRec = new Intent(this, RecommendationPage.class);
+        startActivity(goToRec);
     }
     public void DailyJournal(View view){
         Intent journalIntent = new Intent(this, JournalPage.class);
         startActivity(journalIntent);
     }
+
+
 
     public void toAlarm(View view){
         Intent alarmMain = new Intent(this, AlarmsPage.class);

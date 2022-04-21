@@ -13,7 +13,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/physical"
+            android:id="@+id/mental"
             android:layout_width="match_parent"
             android:layout_height="291dp"
             android:text="RECOMMENDATION 1" />

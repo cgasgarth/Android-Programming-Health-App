@@ -54,7 +54,6 @@
         <activity
             android:name=".AlarmsPage"
             android:exported="false" />
-
         <activity
             android:name=".JournalPage"
             android:exported="false" />
