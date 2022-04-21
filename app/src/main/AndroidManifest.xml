@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject">
         <activity
+            android:name=".UpdatePassword"
+            android:exported="false" />
+        <activity
             android:name=".QIDPageTwelve"
             android:exported="false" />
         <activity

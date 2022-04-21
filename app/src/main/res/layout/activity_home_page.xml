@@ -87,6 +87,12 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/updatePassButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Password" />
+
+    <Button
         android:id="@+id/Logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
