@@ -61,6 +61,12 @@ public class RecommendationPage extends AppCompatActivity {
         });
     }
 
+    public void ReturnHome(View view){
+        Intent returnHome = new Intent(this, HomePage.class);
+        startActivity(returnHome);
+    }
+
+
 
 
 
