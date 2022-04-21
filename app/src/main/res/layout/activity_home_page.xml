@@ -38,6 +38,7 @@
                 android:id="@+id/goalPage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="toGoals"
                 android:text="Goal Page" />
 
             <Button
@@ -65,6 +66,7 @@
                 android:id="@+id/Journal"
                 android:layout_width="207dp"
                 android:layout_height="wrap_content"
+                android:onClick="DailyJournal"
                 android:text="DailyJournal" />
 
             <Button
@@ -78,8 +80,8 @@
                 android:id="@+id/QID"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="DailyJournal"
-                android:text="DailyJournal" />
+                android:onClick="qidPage"
+                android:text="QID" />
         </LinearLayout>
 
     </LinearLayout>

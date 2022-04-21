@@ -63,8 +63,8 @@ public class RecommendationFragment2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v= inflater.inflate(R.layout.fragment_recommendation2, container, false);
-        EditText txt = v.findViewById(R.id.physical);
+        View v = inflater.inflate(R.layout.fragment_recommendation2, container, false);
+        TextView txt = v.findViewById(R.id.physical);
         txt.setText("Eat healthy food. At the top of our list is nutrition"
         +" Drink enough water."
         +"Exercise every day."

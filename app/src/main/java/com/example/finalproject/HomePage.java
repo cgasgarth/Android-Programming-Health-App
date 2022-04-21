@@ -51,6 +51,10 @@ public class HomePage extends AppCompatActivity {
         Intent alarmMain = new Intent(this, AlarmsPage.class);
         startActivity(alarmMain);
     }
+    public void toGoals(View view){
+        Intent Goals = new Intent(this, GoalPage.class);
+        startActivity(Goals);
+    }
 
     public void qidPage(View view){
         Intent QIDIntent = new Intent(this, QIDPageOne.class);
