@@ -18,7 +18,7 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
-<<<<<<< Updated upstream
+
     <string-array name="times_array">
         <item>5 Minutes</item>
         <item>10 Minutes</item>

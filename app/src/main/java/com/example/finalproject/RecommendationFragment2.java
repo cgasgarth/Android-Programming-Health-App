@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -51,6 +53,8 @@ public class RecommendationFragment2 extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
+
         }
     }
 
@@ -59,6 +63,14 @@ public class RecommendationFragment2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_recommendation2, container, false);
+        View v= inflater.inflate(R.layout.fragment_recommendation2, container, false);
+        EditText txt = v.findViewById(R.id.physical);
+        txt.setText("Eat healthy food. At the top of our list is nutrition"
+        +" Drink enough water."
+        +"Exercise every day."
+        +"Rest eight hours a day.");
+
+        return v;
     }
+
 }
