@@ -45,7 +45,7 @@
                 android:id="@+id/Recommendations"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="GoRecommendations"
+                android:onClick="Recommendations"
                 android:text="Recommendations" />
 
             <Button
