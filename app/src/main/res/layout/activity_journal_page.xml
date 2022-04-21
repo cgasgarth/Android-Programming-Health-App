@@ -97,19 +97,19 @@
             android:orientation="vertical">
 
             <CheckBox
-                android:id="@+id/checkBox4"
+                android:id="@+id/noTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Ran out of time" />
 
             <CheckBox
-                android:id="@+id/checkBox5"
+                android:id="@+id/depressed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="I'm Depressed" />
 
             <CheckBox
-                android:id="@+id/checkBox6"
+                android:id="@+id/unwell"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="I'm unwell" />

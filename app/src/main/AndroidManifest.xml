@@ -10,7 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject">
         <activity
-<<<<<<< Updated upstream
             android:name=".QIDPageTwelve"
             android:exported="false" />
         <activity
@@ -54,12 +53,12 @@
             android:exported="false" />
         <activity
             android:name=".AlarmsPage"
-=======
+            android:exported="false" />
+        <activity
             android:name=".JournalPage"
             android:exported="false" />
         <activity
             android:name=".GoalPage"
->>>>>>> Stashed changes
             android:exported="false" />
         <activity
             android:name=".RecommendationPage"
