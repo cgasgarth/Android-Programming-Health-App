@@ -13,7 +13,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/mental"
+            android:id="@+id/physical"
             android:layout_width="match_parent"
             android:layout_height="291dp"
             android:text="RECOMMENDATION 1" />
@@ -22,7 +22,7 @@
             android:id="@+id/close"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="Click"
+            android:onClick="onClick"
             android:text="close" />
     </LinearLayout>
 
