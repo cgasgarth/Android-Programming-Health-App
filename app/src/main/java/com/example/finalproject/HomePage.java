@@ -31,6 +31,7 @@ public class HomePage extends AppCompatActivity {
         finish();
         System.exit(0);
     }
+    
 
     public void ProgressTracker(View view){
         Intent Progress = new Intent(this, ProgressTracker.class);

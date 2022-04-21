@@ -62,8 +62,6 @@ public class GoalPage extends AppCompatActivity {
 
                 try {
                     writeFile("Info.txt",phyGoal,menGoal,socGoal); //filename:info.txt
-                    Intent launch = new Intent(getApplicationContext(), Display.class);
-                    startActivity(launch);
 
                 } catch (JSONException e) {
                     e.printStackTrace();

@@ -35,11 +35,10 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/Logout"
+                android:id="@+id/goalPage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="Logout"
-                android:text="Logout" />
+                android:text="Goal Page" />
 
             <Button
                 android:id="@+id/Recommendations"
@@ -47,12 +46,26 @@
                 android:layout_height="wrap_content"
                 android:onClick="GoRecommendations"
                 android:text="Recommendations" />
+
+            <Button
+                android:id="@+id/Alarm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="toAlarm"
+                android:text="Alarms" />
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="207dp"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <Button
+                android:id="@+id/Journal"
+                android:layout_width="207dp"
+                android:layout_height="wrap_content"
+                android:text="DailyJournal" />
 
             <Button
                 android:id="@+id/Progress"
@@ -62,26 +75,21 @@
                 android:text="ProgressTracker" />
 
             <Button
-                android:id="@+id/Journal"
-                android:layout_width="207dp"
+                android:id="@+id/QID"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="DailyJournal" />
+                android:onClick="qidPage"
+                android:text="QID" />
+
         </LinearLayout>
 
     </LinearLayout>
 
     <Button
-        android:id="@+id/Alarm"
+        android:id="@+id/Logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="toAlarm"
-        android:text="Alarms" />
-
-    <Button
-        android:id="@+id/QID"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="qidPage"
-        android:text="QID" />
+        android:onClick="Logout"
+        android:text="Logout" />
 
 </LinearLayout>
