@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -59,7 +60,7 @@ public class GoalPage extends AppCompatActivity {
                 String phyGoal = setPhyGoal.getText().toString();
                 String menGoal = setMenGoal.getText().toString();
                 String socGoal = setSocGoal.getText().toString();
-
+                toastMsg("You results are submited!");
                 try {
                     writeFile("Info.txt",phyGoal,menGoal,socGoal); //filename:info.txt
 
@@ -91,6 +92,11 @@ public class GoalPage extends AppCompatActivity {
     private boolean hasWritePermissions() {
         return (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED);
+    }
+
+    public void toastMsg(String msg){
+        Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
+        toast.show();
     }
 
     private void requestAppPermissions() {
