@@ -101,5 +101,24 @@ public class JournalPage extends AppCompatActivity {
         }
     }
 
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.submitButton2:
+                informationStoring(v);
+                break;
+            case R.id.returnButton:
+                ReturnHome(v);
+                break;
+        }
+    }
+
+    public void ReturnHome(View view){
+        Intent returnHome = new Intent(this, HomePage.class);
+        startActivity(returnHome);
+    }
+
+    public void informationStoring(View view){
+
+    }
 
 }
