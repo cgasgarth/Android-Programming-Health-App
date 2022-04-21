@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 
 import org.json.JSONException;
@@ -33,8 +34,19 @@ public class JournalPage extends AppCompatActivity {
         Button submitJournal = findViewById(R.id.submitButton2);
         Button linkToHome = findViewById(R.id.returnButton);
         EditText EnterNotes = findViewById(R.id.EnterNotesTV);
-
-
+        CheckBox phyCheck = findViewById(R.id.checkBox1);
+        CheckBox menCheck = findViewById(R.id.checkBox2);
+        CheckBox socCheck = findViewById(R.id.checkBox3);
+        CheckBox noTime = findViewById(R.id.noTime);
+        CheckBox depressed = findViewById(R.id.depressed);
+        CheckBox unWell = findViewById(R.id.unwell);
+        linkToHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent dash = new Intent(JournalPage.this, HomePage.class);
+                startActivity(dash);
+            }
+        });
         submitJournal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
