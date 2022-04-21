@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class RecommendationPage extends AppCompatActivity {
 
@@ -65,6 +66,10 @@ public class RecommendationPage extends AppCompatActivity {
         Intent returnHome = new Intent(this, HomePage.class);
         startActivity(returnHome);
     }
+
+
+
+
 
 
 

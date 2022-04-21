@@ -100,4 +100,6 @@ public class JournalPage extends AppCompatActivity {
             e.printStackTrace();  //to handle exceptions and errors.
         }
     }
+
+
 }
