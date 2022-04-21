@@ -41,6 +41,10 @@ public class HomePage extends AppCompatActivity {
         Intent recIntent = new Intent(this, RecommendationPage.class);
         startActivity(recIntent);
     }
+    public void DailyJournal(View view){
+        Intent journalIntent = new Intent(this, JournalPage.class);
+        startActivity(journalIntent);
+    }
 
     public void toAlarm(View view){
         Intent alarmMain = new Intent(this, AlarmsPage.class);

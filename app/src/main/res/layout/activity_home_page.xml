@@ -65,6 +65,7 @@
                 android:id="@+id/Journal"
                 android:layout_width="207dp"
                 android:layout_height="wrap_content"
+                android:onClick="DailyJournal"
                 android:text="DailyJournal" />
         </LinearLayout>
 
