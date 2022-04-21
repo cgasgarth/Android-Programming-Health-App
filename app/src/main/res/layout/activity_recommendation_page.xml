@@ -18,7 +18,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="openMentalFrag"
             android:text="Mental" />
 
         <Button
@@ -26,7 +25,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="openPhysicalFrag"
             android:text="Physical" />
 
         <Button
@@ -34,7 +32,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="openSocialFrag"
             android:text="Social" />
     </LinearLayout>
 

@@ -68,14 +68,4 @@ public class RecommendationPage extends AppCompatActivity {
     }
 
 
-
-
-
-
-
-
-
-
-
-
 }
