@@ -97,27 +97,22 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
         String user;
         String pass;
 
-        if(nameET.getText() != null){ name = nameET.getText().toString(); }
-        else { name = "NOT_ENTERED"; }
-
-        if(dobET.getText() != null){
+        name = nameET.getText().toString();
+        dob = " ";
+        try {
             dob = dobET.getText().toString();
             Scanner sc = new Scanner(dob).useDelimiter("/");
             dob = sc.next();
             dob = dob + sc.next();
             dob = dob + sc.next();
+        } catch (Exception e) {
+            dobET.setError("Please format the DOB Correctly");
         }
 
-        else { dob = "NOT_ENTERED"; }
 
-        if(genderET.getText() != null){ gender = genderET.getText().toString(); }
-        else { gender = "NOT_ENTERED"; }
-
-        if(userET.getText() != null){ user = userET.getText().toString(); }
-        else { user = "NOT_ENTERED"; }
-
-        if(passET.getText() != null){ pass = passET.getText().toString(); }
-        else { pass = "NOT_ENTERED"; }
+        gender = genderET.getText().toString();
+        user = userET.getText().toString();
+        pass = passET.getText().toString();
 
         DBClass db = MainActivity.db;
         byte[] hashPassword = new byte[0];

@@ -117,30 +117,23 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
             DBClass db = MainActivity.db;
             String cond = "username=" + '"' + user + '"';
             try{
-            byte[] getHashedPassword = db.getHash("password_val", "Users", cond);
+                byte[] getHashedPassword = db.getHash("password_val", "Users", cond);
 
-            if (Arrays.equals(hashLoginPassword, getHashedPassword)) {
-                try {
-                    writeFile("Info.txt",user); //filename:info.txt
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
-                cond = "username=" + '"' + user + '"';
-                String getName = db.selectConditionQuery("name", cond);
+                if (Arrays.equals(hashLoginPassword, getHashedPassword)) {
+                    cond = "username=" + '"' + user + '"';
+                    String getName = db.selectConditionQuery("name", cond);
 
-                SharedPreferences sharedPreferences =
+                    SharedPreferences sharedPreferences =
                         this.getActivity().getSharedPreferences("Details", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("Name", getName);
-                editor.commit();
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("Name", getName);
+                    editor.commit();
 
-                Intent intent = new Intent(getContext(), HomePage.class);
-                startActivity(intent);
-            }else {
-                passET.setError("The Password is not valid");
-            }
+                    Intent intent = new Intent(getContext(), HomePage.class);
+                    startActivity(intent);
+                }else{
+                    passET.setError("The Password is not valid");
+                }
             }catch (Exception e){ userET.setError("The Username is not valid"); }
         }catch(NoSuchAlgorithmException e){
             e.printStackTrace();
