@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void openLoginFrag(View view){
         Bundle bundle = new Bundle();
-        DBClass db = new DBClass(MainActivity.this, "Info");
         closeAllFragments(view);
 
         getSupportFragmentManager().beginTransaction()

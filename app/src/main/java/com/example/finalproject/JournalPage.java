@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -51,6 +52,54 @@ public class JournalPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String textNotes = EnterNotes.getText().toString();
+                toastMsg("Your results are submited!");
+
+                if (phyCheck.isChecked()){
+                    String phyCheckBox = phyCheck.getText().toString();
+
+                    try {
+                        writeFile("Info.txt",phyCheckBox); //filename:info.txt
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                }
+                if (menCheck.isChecked()){
+                    String menCheckBox = menCheck.getText().toString();
+
+                    try {
+                        writeFile("Info.txt",menCheckBox); //filename:info.txt
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                }
+                if (socCheck.isChecked()){
+                    String socCheckbox = socCheck.getText().toString();
+                    try {
+                        writeFile("Info.txt",socCheckbox); //filename:info.txt
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                }
+                if (noTime.isChecked()){
+                    String noTimeCheck = noTime.getText().toString();
+                    try {
+                        writeFile("Info.txt",noTimeCheck); //filename:info.txt
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                }
                 try {
                     writeFile("Info.txt",textNotes); //filename:info.txt
 
@@ -65,6 +114,10 @@ public class JournalPage extends AppCompatActivity {
                 }
             }
         });
+    }
+    public void toastMsg(String msg){
+        Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
+        toast.show();
     }
 
     private boolean hasWritePermissions() {

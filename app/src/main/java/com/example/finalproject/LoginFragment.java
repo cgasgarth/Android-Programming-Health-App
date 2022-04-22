@@ -127,6 +127,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                         this.getActivity().getSharedPreferences("Details", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString("Name", getName);
+                    editor.putString("Username", user);
                     editor.commit();
 
                     Intent intent = new Intent(getContext(), HomePage.class);

@@ -86,11 +86,28 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/updatePassButton"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Update Password" />
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/updatePassButton"
+            android:layout_width="203dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="updatePassword"
+            android:text="Update Password" />
+
+        <Button
+            android:id="@+id/calender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:onClick="Calender"
+            android:text="Calender" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/Logout"
