@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -51,6 +52,8 @@ public class JournalPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String textNotes = EnterNotes.getText().toString();
+                toastMsg("Your results are submited!");
+
                 if (phyCheck.isChecked()){
                     String phyCheckBox = phyCheck.getText().toString();
 
@@ -107,6 +110,10 @@ public class JournalPage extends AppCompatActivity {
                 }
             }
         });
+    }
+    public void toastMsg(String msg){
+        Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
+        toast.show();
     }
 
     private boolean hasWritePermissions() {

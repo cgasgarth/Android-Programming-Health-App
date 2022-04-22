@@ -60,7 +60,7 @@ public class GoalPage extends AppCompatActivity {
                 String phyGoal = setPhyGoal.getText().toString();
                 String menGoal = setMenGoal.getText().toString();
                 String socGoal = setSocGoal.getText().toString();
-                toastMsg("You results are submited!");
+                toastMsg("Your results are submited!");
                 try {
                     writeFile("Info.txt",phyGoal,menGoal,socGoal); //filename:info.txt
 
