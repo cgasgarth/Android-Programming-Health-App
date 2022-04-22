@@ -150,6 +150,14 @@ public class DBClass extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void updateDOB(String username, long DOB){
+        SQLiteDatabase db = this.getReadableDatabase();
+        db.execSQL("UPDATE "+ TABLE_NAME + " SET " + DOB_COL + " = " + "'"+ DOB + "'" +
+                " WHERE " +
+                USERNAME_COL + " = " + "'" + username + "'"); //special character.
+        db.close();
+    }
+
     public void updatePassword(String username, byte[] password){
         SQLiteDatabase db = this.getReadableDatabase();
         db.execSQL("UPDATE "+ TABLE_NAME + " SET " + PASS_COL + " = " + "'"+ password + "'" +

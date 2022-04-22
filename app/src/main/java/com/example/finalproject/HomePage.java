@@ -49,7 +49,7 @@ public class HomePage extends AppCompatActivity {
     }
 
     public void Calender(View view){
-        Intent Calender = new Intent(this, Calender.class);
+        Intent Calender = new Intent(this, Calendar.class);
         startActivity(Calender);
     }
 
