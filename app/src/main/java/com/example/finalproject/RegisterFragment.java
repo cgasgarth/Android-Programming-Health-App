@@ -121,7 +121,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
 
 
         if(pass != "" & user != "" & gender != "" & dob != "" & name != ""&
-                user.length() > 4 & passCheck){
+                user.length() >= 4 & passCheck){
             try{
                 hashPassword = messageDigest(pass);
             }
@@ -135,7 +135,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
             Toast.makeText(getContext().getApplicationContext(), "You have registered",
                     Toast.LENGTH_LONG).show();
         }else{
-                    passET.setError("Every space must be completed, the password must be " +
+                    passET.setError("Every space must be completed, the password must " +
                             "contain a capital letter, and the username " +
                             "must be 4 or more characters");
         }
