@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -39,6 +40,8 @@ public class UpdatePassword extends AppCompatActivity {
                 String user_val = sharedpreferences.getString("Username","No name");
                 try{
                     db.updatePassword(user_val, hashLoginPassword);
+                    Toast.makeText(this, "Password Updated",
+                            Toast.LENGTH_LONG).show();
                 }catch (Exception e){
                     e.printStackTrace();
                 }

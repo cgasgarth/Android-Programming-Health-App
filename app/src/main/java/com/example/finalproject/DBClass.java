@@ -48,14 +48,14 @@ public class DBClass extends SQLiteOpenHelper {
         db.execSQL(qry);
         db.close();
     }
-    public void addInfo(String name, String dob, String Gender, byte[] pwd,String Username) {
+    public void addInfo(String name, Long dob, String Gender, byte[] pwd,String Username) {
         //getColumns();
         Log.d("inside", "add info");
         ContentValues values = new ContentValues(); //used to store set of values.
         SQLiteDatabase db = this.getWritableDatabase(); //Opensource db
         //values.put(ID_COL,i);
         values.put(NAME_COL, name);
-        values.put(DOB_COL, Integer.parseInt(dob));
+        values.put(DOB_COL, dob);
         values.put(GENDER_COL, Gender);
         values.put(PASS_COL, pwd);
 
@@ -147,6 +147,14 @@ public class DBClass extends SQLiteOpenHelper {
     public void updateTable(String field1,String fieldvalue1,String field2,String fieldvalue2){
         SQLiteDatabase db = this.getReadableDatabase();
         db.execSQL("UPDATE "+TABLE_NAME+" SET"+" "+field1 +"="+"'"+fieldvalue1+"',"+field2+"="+"'"+fieldvalue2+"'"); //special character.
+        db.close();
+    }
+
+    public void updateDOB(String username, long DOB){
+        SQLiteDatabase db = this.getReadableDatabase();
+        db.execSQL("UPDATE "+ TABLE_NAME + " SET " + DOB_COL + " = " + "'"+ DOB + "'" +
+                " WHERE " +
+                USERNAME_COL + " = " + "'" + username + "'"); //special character.
         db.close();
     }
 
