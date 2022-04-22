@@ -11,70 +11,70 @@
         android:theme="@style/Theme.FinalProject">
         <activity
             android:name=".Calendar"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".UpdatePassword"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".QIDPageTwelve"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".QIDPageEleven"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".QIDPageTen"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".QIDPageNine"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".QIDPageEight"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".QIDPageSeven"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".QIDPageSixWeightIncrease"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".QIDPageSixWeightDecrease"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".QIDPageFive"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".QIDPageFourDecreased"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".QIDPageFourIncreased"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".QIDPageThree"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".QIDPageTwo"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".QIDPageOne"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".AlarmsPage"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".JournalPage"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".GoalPage"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".RecommendationPage"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ProgressTracker"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".HomePage"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
