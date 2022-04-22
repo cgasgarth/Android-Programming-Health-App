@@ -30,7 +30,8 @@ public class HomePage extends AppCompatActivity {
         editor.commit();
 
         finish();
-        System.exit(0);
+        Intent MainActivity = new Intent(this, MainActivity.class);
+        startActivity(MainActivity);
     }
     
 
