@@ -106,14 +106,15 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         String user;
         String pass;
 
-        if(userET.getText() != null){ user = userET.getText().toString(); }
+        if(userET.getText().toString() != ""){ user = userET.getText().toString(); }
         else { user = "NOT_ENTERED"; }
 
-        if(passET.getText() != null){ pass = passET.getText().toString(); }
+        if(passET.getText().toString() != ""){ pass = passET.getText().toString(); }
         else { pass = "NOT_ENTERED"; }
 
         try{
             byte[] hashLoginPassword = messageDigest(pass);
+            Log.i("hashed is", hashLoginPassword.toString());
             DBClass db = MainActivity.db;
             String cond = "username=" + '"' + user + '"';
             try{

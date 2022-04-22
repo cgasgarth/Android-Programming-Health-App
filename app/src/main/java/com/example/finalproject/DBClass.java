@@ -160,9 +160,24 @@ public class DBClass extends SQLiteOpenHelper {
 
     public void updatePassword(String username, byte[] password){
         SQLiteDatabase db = this.getReadableDatabase();
-        db.execSQL("UPDATE "+ TABLE_NAME + " SET " + PASS_COL + " = " + "'"+ password + "'" +
-                " WHERE " +
-                USERNAME_COL + " = " + "'" + username + "'"); //special character.
+//        db.execSQL("UPDATE "+ TABLE_NAME + " SET " + PASS_COL + " = " + "'"+ password + "'" +
+//                " WHERE " +
+//                USERNAME_COL + " = " + "'" + username + "'"); //special character.
+        String condition = "username = '" + username+"'";
+        String name = selectConditionQuery(NAME_COL, condition);
+        String dob = selectConditionQuery(DOB_COL, condition);
+        String gender = selectConditionQuery(GENDER_COL, condition);
+
+        ContentValues values = new ContentValues();
+        db.delete(TABLE_NAME, condition, null);
+
+        values.put(NAME_COL, name);
+        values.put(DOB_COL, Long.parseLong(dob));
+        values.put(GENDER_COL, gender);
+        values.put(PASS_COL, password);
+
+        values.put(USERNAME_COL, username);
+        db.insert(TABLE_NAME, null, values);
         //db.close();
     }
     @Override

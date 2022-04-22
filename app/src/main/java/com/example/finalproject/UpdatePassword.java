@@ -28,6 +28,8 @@ public class UpdatePassword extends AppCompatActivity {
         String passOneString = passOne.getText().toString();
         String passTwoString = passTwo.getText().toString();
         Log.i("Passone is", passOneString);
+        Log.i("passtwo is", passTwoString);
+        byte[] hashPassword = new byte[0];
         DBClass db = new DBClass(this, "Info");
         if (!(passOneString.equals(passTwoString))){
             passOne.setError("Passwords do not match");
@@ -35,11 +37,11 @@ public class UpdatePassword extends AppCompatActivity {
             passOne.setError("Password must contain a capital letter");
         }else{
             try {
-                byte[] hashLoginPassword = messageDigest(passOneString);
+                hashPassword = messageDigest(passOneString);
                 SharedPreferences sharedpreferences = getSharedPreferences("Details", MODE_PRIVATE);
                 String user_val = sharedpreferences.getString("Username","No name");
                 try{
-                    db.updatePassword(user_val, hashLoginPassword);
+                    db.updatePassword(user_val, hashPassword);
                     Toast.makeText(this, "Password Updated",
                             Toast.LENGTH_LONG).show();
                 }catch (Exception e){
@@ -56,8 +58,7 @@ public class UpdatePassword extends AppCompatActivity {
         startActivity(homePage);
     }
 
-    public byte[] messageDigest(String s) throws NoSuchAlgorithmException
-    {
+    public byte[] messageDigest(String s) throws NoSuchAlgorithmException {
         MessageDigest md = MessageDigest.getInstance("SHA-256");
         return md.digest(s.getBytes(StandardCharsets.UTF_8));
     }
