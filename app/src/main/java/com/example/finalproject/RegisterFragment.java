@@ -14,7 +14,8 @@ import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Scanner;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -92,19 +93,17 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
 
     public void register(View view){
         String name;
-        String dob;
+        String dobTV = dobET.getText().toString();
         String gender;
         String user;
         String pass;
+        long dob = 0;
 
         name = nameET.getText().toString();
-        dob = " ";
         try {
-            dob = dobET.getText().toString();
-            Scanner sc = new Scanner(dob).useDelimiter("/");
-            dob = sc.next();
-            dob = dob + sc.next();
-            dob = dob + sc.next();
+            SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+            Date date = sdf.parse(dobTV);
+            dob = date.getTime();
         } catch (Exception e) {
             dobET.setError("Please format the DOB Correctly");
         }
@@ -120,7 +119,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
         if(pass.toLowerCase() == pass ){ passCheck = false; }
 
 
-        if(pass != "" & user != "" & gender != "" & dob != "" & name != ""&
+        if(pass != "" & user != "" & gender != "" & name != ""&
                 user.length() >= 4 & passCheck){
             try{
                 hashPassword = messageDigest(pass);

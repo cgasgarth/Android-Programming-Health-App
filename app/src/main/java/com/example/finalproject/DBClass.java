@@ -48,14 +48,14 @@ public class DBClass extends SQLiteOpenHelper {
         db.execSQL(qry);
         db.close();
     }
-    public void addInfo(String name, String dob, String Gender, byte[] pwd,String Username) {
+    public void addInfo(String name, Long dob, String Gender, byte[] pwd,String Username) {
         //getColumns();
         Log.d("inside", "add info");
         ContentValues values = new ContentValues(); //used to store set of values.
         SQLiteDatabase db = this.getWritableDatabase(); //Opensource db
         //values.put(ID_COL,i);
         values.put(NAME_COL, name);
-        values.put(DOB_COL, Integer.parseInt(dob));
+        values.put(DOB_COL, dob);
         values.put(GENDER_COL, Gender);
         values.put(PASS_COL, pwd);
 
