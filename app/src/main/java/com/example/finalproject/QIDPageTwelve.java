@@ -1,11 +1,11 @@
 package com.example.finalproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class QIDPageTwelve extends AppCompatActivity {
 
@@ -14,9 +14,7 @@ public class QIDPageTwelve extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qidpage_twelve);
 
-        TextView score = findViewById(R.id.score);
-        TextView uname = findViewById(R.id.textView2);
-        uname.setText("Welcome "+ QIDPageOne.uname); //method 1 with global variable
+        TextView score = findViewById(R.id.textView9);
         score.setText(yourScore(QIDPageOne.answerVals)); //using extra, method 2
     }
 

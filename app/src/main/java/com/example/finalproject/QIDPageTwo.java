@@ -1,13 +1,12 @@
 package com.example.finalproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class QIDPageTwo extends AppCompatActivity {
 
@@ -41,12 +40,12 @@ public class QIDPageTwo extends AppCompatActivity {
         setAnswerVals(view); //this is called only when we hit the next button
         RadioGroup RG = findViewById(R.id.RG1); //You will have to add ID's to radio groups in XML file
         if( RG.getCheckedRadioButtonId() == -1) {
-            TextView TV = findViewById(R.id.AlertText); //Add textview to every page to display message
-            TV.setText("Please fill out all questions");
+//            TextView TV = findViewById(R.id.AlertText); //Add textview to every page to display message
+//            TV.setText("Please fill out all questions");
         }
         else {
-            TextView TV = findViewById(R.id.AlertText); //Add textview to every page to display message
-            TV.setText("");
+//            TextView TV = findViewById(R.id.AlertText); //Add textview to every page to display message
+//            TV.setText("");
             Intent nextPage = new Intent(this, QIDPageThree.class); //Check that it is set to correct page
             startActivity(nextPage);
         }

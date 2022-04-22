@@ -1,16 +1,15 @@
 package com.example.finalproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.Arrays;
-
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Arrays;
 
 
 
@@ -95,8 +94,8 @@ public class QIDPageOne extends AppCompatActivity {
             TV.setText("Please fill out all questions");
         }
         else {
-            TextView TV = findViewById(R.id.AlertText); //Add textview to every page to display message
-            TV.setText("");
+//            TextView TV = findViewById(R.id.AlertText); //Add textview to every page to display message
+//            TV.setText("");
             Intent nextPage = new Intent(this, QIDPageTwo.class); //Check that it is set to correct page
             startActivity(nextPage);
         }
