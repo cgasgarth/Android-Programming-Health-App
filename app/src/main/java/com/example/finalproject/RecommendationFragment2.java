@@ -44,24 +44,15 @@ public class RecommendationFragment2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_recommendation2, container, false);
-        Button b = (Button) v.findViewById(R.id.close);
-        b.setOnClickListener(this::close);
+        TextView txt = v.findViewById(R.id.physical);
+        txt.setText("Sleep. It's common knowledge that most people need 8 hours of sleep a night to stay healthy and alert. ...\n" +
+                "Eating Well.\n" +
+                "Physical Activity.\n" +
+                "Hygiene.\n" +
+                "Relaxation");
+
 
         return v;
-    }
-
-
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.close:
-                close(v);
-        }
-    }
-
-
-    public void close(View view){
-        getParentFragmentManager().beginTransaction()
-                .remove(RecommendationFragment2.this).commit();
     }
 
 }

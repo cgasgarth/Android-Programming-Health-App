@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,12 +60,16 @@ public class RecommendationFragment3 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_recommendation3, container, false);
+        View v = inflater.inflate(R.layout.fragment_recommendation3, container, false);
+        TextView txt = v.findViewById(R.id.social);
+        txt.setText("Practice Self-Care.\n" +
+                "Know Thyself.\n" +
+                "Don't Criticize, Judge or Blame.\n" +
+                "Own Up to Your Part.\n" +
+                "Rekindle old friendships and nurture relationships with people who are respectful, positive and supportive.\n" +
+                "Don't be a flake!\n" +
+                "Appreciate Yourself and Others.");
+        return v;
     }
 
-
-    public void close(View view){
-        getParentFragmentManager().beginTransaction()
-                .remove(RecommendationFragment3.this).commit();
-    }
 }

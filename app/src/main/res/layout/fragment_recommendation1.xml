@@ -13,17 +13,12 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/mental"
+            android:id="@+id/social"
             android:layout_width="match_parent"
             android:layout_height="291dp"
-            android:text="RECOMMENDATION 1" />
+            android:text="RECOMMENDATION 1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-        <Button
-            android:id="@+id/close"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onClick"
-            android:text="close" />
     </LinearLayout>
 
 </FrameLayout>

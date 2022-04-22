@@ -7,23 +7,18 @@
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
-        android:id="@+id/social"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"/>
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/mental"
+            android:id="@+id/social"
             android:layout_width="match_parent"
             android:layout_height="291dp"
-            android:text="social" />
+            android:text="social"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-        <Button
-            android:id="@+id/close"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="Click"
-            android:text="close" />
+    </LinearLayout>
 
 
 </FrameLayout>
