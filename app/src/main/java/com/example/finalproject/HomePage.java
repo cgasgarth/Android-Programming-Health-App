@@ -48,6 +48,10 @@ public class HomePage extends AppCompatActivity {
         startActivity(journalIntent);
     }
 
+    public void Calender(View view){
+        Intent Calender = new Intent(this, Calender.class);
+        startActivity(Calender);
+    }
 
     public void toAlarm(View view){
         Intent alarmMain = new Intent(this, AlarmsPage.class);
