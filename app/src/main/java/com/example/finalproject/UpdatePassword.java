@@ -3,6 +3,7 @@ package com.example.finalproject;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -23,11 +24,14 @@ public class UpdatePassword extends AppCompatActivity {
     public void updatePassword(View view){
         TextView passOne = findViewById(R.id.PassOne);
         TextView passTwo = findViewById(R.id.PassTwo);
-        String passOneString = passOne.toString();
-        String passTwoString = passOne.toString();
+        String passOneString = passOne.getText().toString();
+        String passTwoString = passTwo.getText().toString();
+        Log.i("Passone is", passOneString);
         DBClass db = new DBClass(this, "Info");
-        if (!passOneString.equals(passTwoString)){
+        if (!(passOneString.equals(passTwoString))){
             passOne.setError("Passwords do not match");
+        }else if(passOneString.toLowerCase() == passOneString){
+            passOne.setError("Password must contain a capital letter");
         }else{
             try {
                 byte[] hashLoginPassword = messageDigest(passOneString);
