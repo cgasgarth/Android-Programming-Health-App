@@ -90,6 +90,7 @@
         android:id="@+id/updatePassButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="updatePassword"
         android:text="Update Password" />
 
     <Button

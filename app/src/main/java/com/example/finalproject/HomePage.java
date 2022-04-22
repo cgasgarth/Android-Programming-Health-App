@@ -26,6 +26,7 @@ public class HomePage extends AppCompatActivity {
                 getSharedPreferences("Details", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedpreferences.edit();
         editor.remove("Name"); // will delete key Name
+        editor.remove("UserName");
         editor.commit();
 
         finish();
@@ -60,6 +61,11 @@ public class HomePage extends AppCompatActivity {
     public void qidPage(View view){
         Intent QIDIntent = new Intent(this, QIDPageOne.class);
         startActivity(QIDIntent);
+    }
+
+    public void updatePassword(View view){
+        Intent updateAlarm = new Intent(this, UpdatePassword.class);
+        startActivity(updateAlarm);
     }
 
 }

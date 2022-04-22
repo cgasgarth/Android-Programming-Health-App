@@ -1,6 +1,7 @@
 package com.example.finalproject;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -24,7 +25,7 @@ public class DBClass extends SQLiteOpenHelper {
     private static final String PASS_COL = "password_val";
 
 
-    public DBClass(MainActivity context, String DATABASE_NAME){
+    public DBClass(Context context, String DATABASE_NAME){
         super(context,DATABASE_NAME,null,1);
     }
     //default constructor, factory points to cursor factory->allow cursor, version of db
@@ -62,7 +63,7 @@ public class DBClass extends SQLiteOpenHelper {
         Log.d("Pre","Insert");
         db.insert(TABLE_NAME, null, values);
         Log.d("post", "insert");
-        db.close();
+        //db.close();
     }
     public void getColumns(){
         SQLiteDatabase db = this.getReadableDatabase();
@@ -118,7 +119,7 @@ public class DBClass extends SQLiteOpenHelper {
 //            Log.d("==SelectCondition===","====="+val);
 //        }
         cur.close();
-        db.close();
+        //db.close();
         return val;
     }
 
@@ -127,7 +128,7 @@ public class DBClass extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cur=db.rawQuery(query,null); //Runs the provided SQL and returns a Cursor over the result set.
         cur.moveToFirst();
-        db.close();
+        //db.close();
         return cur.getBlob(0);
     }
 
@@ -147,6 +148,13 @@ public class DBClass extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         db.execSQL("UPDATE "+TABLE_NAME+" SET"+" "+field1 +"="+"'"+fieldvalue1+"',"+field2+"="+"'"+fieldvalue2+"'"); //special character.
         db.close();
+    }
+
+    public void updatePassword(String username, byte[] password){
+        SQLiteDatabase db = this.getReadableDatabase();
+        db.execSQL("UPDATE "+ TABLE_NAME + " SET " + PASS_COL + " = " + password + " WHERE " +
+                USERNAME_COL + " = " + username); //special character.
+        //db.close();
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) { //Called when the database needs to be upgraded. The implementation should use this method to drop tables, add tables, or do anything else it needs to upgrade to the new schema version.
