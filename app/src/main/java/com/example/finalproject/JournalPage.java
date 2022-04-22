@@ -51,7 +51,52 @@ public class JournalPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String textNotes = EnterNotes.getText().toString();
+                if (phyCheck.isChecked()){
+                    String phyCheckBox = phyCheck.getText().toString();
 
+                    try {
+                        writeFile("Info.txt",phyCheckBox); //filename:info.txt
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                }
+                if (menCheck.isChecked()){
+                    String menCheckBox = menCheck.getText().toString();
+
+                    try {
+                        writeFile("Info.txt",menCheckBox); //filename:info.txt
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                }
+                if (socCheck.isChecked()){
+                    String socCheckbox = socCheck.getText().toString();
+                    try {
+                        writeFile("Info.txt",socCheckbox); //filename:info.txt
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                }
+                if (noTime.isChecked()){
+                    String noTimeCheck = noTime.getText().toString();
+                    try {
+                        writeFile("Info.txt",noTimeCheck); //filename:info.txt
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                }
                 try {
                     writeFile("Info.txt",textNotes); //filename:info.txt
 
