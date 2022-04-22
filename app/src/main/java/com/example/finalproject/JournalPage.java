@@ -51,7 +51,6 @@ public class JournalPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String textNotes = EnterNotes.getText().toString();
-
                 try {
                     writeFile("Info.txt",textNotes); //filename:info.txt
 
@@ -59,6 +58,10 @@ public class JournalPage extends AppCompatActivity {
                     e.printStackTrace();
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
+                }
+                if (depressed.isChecked() || unWell.isChecked()) {
+                    Intent QIDIntent = new Intent(JournalPage.this, QIDPageOne.class);
+                    startActivity(QIDIntent);
                 }
             }
         });
@@ -120,10 +123,5 @@ public class JournalPage extends AppCompatActivity {
         startActivity(returnHome);
     }
 
-    public void informationStoring(View view){
-
-        Intent QIDIntent = new Intent(this, QIDPageOne.class);
-        startActivity(QIDIntent);
-    }
 
 }

@@ -101,4 +101,12 @@ public class QIDPageOne extends AppCompatActivity {
             startActivity(nextPage);
         }
     }
+
+
+
+    public void ReturnHome(View view){
+        Intent returnHome = new Intent(this, HomePage.class);
+        startActivity(returnHome);
+    }
+
 }
