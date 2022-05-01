@@ -116,7 +116,7 @@ public class AlarmsPage extends AppCompatActivity implements AdapterView.OnItemS
         //Creating a pending intent for sendNotification class.
         Intent intent = new Intent(this, sendNotification.class);
         intent.putExtra("AlarmName", name);
-        @SuppressLint("UnspecifiedImmutableFlag") PendingIntent pendingIntent = PendingIntent.getBroadcast(this, requestCode, intent, PendingIntent.FLAG_ONE_SHOT);
+        @SuppressLint("UnspecifiedImmutableFlag") PendingIntent pendingIntent = PendingIntent.getBroadcast(this, requestCode, intent, PendingIntent.FLAG_MUTABLE);
         requestCode++;
         //Generating object of alarmManager using getSystemService method. Here ALARM_SERVICE is used to receive alarm manager with intent at a time.
         AlarmManager alarmManager=(AlarmManager)getSystemService(ALARM_SERVICE);
